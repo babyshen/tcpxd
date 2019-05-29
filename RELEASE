@@ -1,0 +1,9 @@
+Maintainer's release procedure
+
+	- change version in configure.in, AM_INIT_AUTOMAKE
+	- change version in tcpxd.c, VERSION 
+	- make dist,
+	- test,
+	- rcs -sRel RCS/*
+	- copy to web server,
+	- announce on freshmeat.net.

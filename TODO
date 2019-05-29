@@ -1,0 +1,35 @@
+Wishlist: handle SIGHUP by repeating hostname lookups
+
+----
+
+Date: Tue, 9 Oct 2001 17:01:52 -0300 (GMT+3)
+To: quozl@us.netrek.org
+From: "Andres Tarallo (CHASQUE)" <andres@chasque.net>
+Subject: tcpxd v 1.2
+  
+        I'm traying to install an make worktcpxd under solaris 2.6
+with gcc 2.7.2, compiles fine (only shouts for a warning) and when
+linking there are a lot of functions that the linker can't find.
+They can be solved by adding the following compiler directives: -lxnet
+-lresolv. Maybe in a next release you can add a feature in the confire
+script to solve this problem.
+  
+----
+
+Date: Mon, 11 Sep 2000 11:16:26 -0700
+To: James Cameron <quozl@us.netrek.org>
+From: "Daniel P. Kionka" <dan@kionka.org>
+Subject: Re: feature for tcpxd
+
+You should add more info to the web page, like:
+Example:
+
+To redirect web traffic to another site:
+
+        tcpxd 8888 www.yahoo.com 80
+
+To see the GETs and html output:
+
+        tcpxd --verbose --verbose --verbose --verbose 8888 www.yahoo.com 80
+
+

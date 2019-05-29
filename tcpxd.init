@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# tcpcd        starts tcpxd TCP forwarding daemon
+#
+
+# source function library
+. /etc/rc.d/init.d/functions
+
+[ -f /etc/tcpxd.conf ] || exit 0
+
+case "$1" in
+  start)
+	echo -n "Starting tcpxd: "
+        daemon /usr/bin/tcpxd --input /etc/tcpxd.conf
+	touch /var/lock/subsys/tcpxd
+	echo
+	;;
+  stop)
+	echo -n "Shutting down tcpxd: "
+	killproc tcpxd
+	rm -f /var/lock/subsys/tcpxd
+	echo
+	;;
+  restart)
+        $0 stop
+        $0 start
+        ;;
+  status)
+        status tcpxd
+        ;;
+  *)
+	echo "Usage: tcpxd {start|stop|restart|status}"
+	exit 1
+esac
+
+exit 0

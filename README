@@ -1,0 +1,13 @@
+$Id: README,v 1.2 2001/09/11 02:37:44 james Rel $
+
+Quick installation:
+
+	% ./configure
+	% make
+	# make install
+
+See INSTALL for more complete instructions.
+
+See TODO for ideas for future development.
+
+Maintainer is quozl@us.netrek.org.
